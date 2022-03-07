@@ -16,10 +16,10 @@ class Login extends Component {
     this.validateName = this.validateName.bind(this);
   }
 
-  onInputChange({ target: { name, value } }, callback) {
+  onInputChange({ target: { name, value } }) {
     this.setState({
       [name]: value,
-    }, () => callback());
+    }, () => this.validateName());
   }
 
   onSubmit = async () => {
@@ -41,14 +41,14 @@ class Login extends Component {
     const { userName, isSubmitButtonDisabled, loading, validUser } = this.state;
     return (
       <div data-testid="page-login">
-        { loading ? <Loading />
-          : <>
+        { loading ? <Loading /> : (
+          <>
             <input
               type="text"
               name="userName"
               data-testid="login-name-input"
               value={ userName }
-              onChange={ (e) => this.onInputChange(e, this.validateName) }
+              onChange={ this.onInputChange }
             />
             <button
               type="button"
@@ -58,7 +58,7 @@ class Login extends Component {
             >
               Entrar
             </button>
-            </> }
+          </>) }
         { validUser && <Redirect to="/search" />}
       </div>
     );

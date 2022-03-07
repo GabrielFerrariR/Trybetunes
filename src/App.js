@@ -7,7 +7,6 @@ import Favorites from './pages/Favorites';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/Notfound';
-import Loading from './components/Loading';
 
 class App extends React.Component {
   render() {
