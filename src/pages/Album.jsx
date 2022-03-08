@@ -23,7 +23,6 @@ class Album extends Component {
       artistName: album[0].artistName,
       albumName: album[0].collectionName,
     });
-    console.log(album);
   }
 
   render() {
@@ -33,11 +32,13 @@ class Album extends Component {
         <Header />
         <p data-testid="artist-name">{ artistName }</p>
         <p data-testid="album-name">{ albumName }</p>
-        {musics.map(({ trackName, previewUrl }) => (
+        {musics.map((music) => (
           <MusicCard
-            key={ trackName }
-            trackName={ trackName }
-            previewUrl={ previewUrl }
+            key={ music.trackName }
+            trackName={ music.trackName }
+            previewUrl={ music.previewUrl }
+            trackId={ music.trackId }
+            music={ music }
           />))}
       </div>
     );
