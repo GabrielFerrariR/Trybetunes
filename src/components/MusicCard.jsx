@@ -22,7 +22,7 @@ class MusicCard extends Component {
   }
 
   render() {
-    const { trackName, trackId, previewUrl, music } = this.props;
+    const { trackName, trackId, previewUrl, music, favoriteSongs } = this.props;
     const { loading, isFavorited } = this.state;
     return (
       <div>
@@ -42,7 +42,8 @@ class MusicCard extends Component {
                 data-testid={ `checkbox-music-${trackId}` }
                 name="favorite"
                 onChange={ () => this.onFavorite(music) }
-                checked={ isFavorited }
+                checked={ isFavorited
+                  || favoriteSongs.some((fav) => fav.trackId === trackId) }
               />
             </label>
           </>) }
