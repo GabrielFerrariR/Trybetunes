@@ -11,11 +11,16 @@ class ProfileEdit extends Component {
       loading: true,
       isSaveButtonDisabled: true,
       redirectToProfile: false,
+      description: '',
+      email: '',
+      image: '',
+      name: '',
     };
   }
 
-  componentDidMount() {
-    this.userInfo();
+  async componentDidMount() {
+    await this.userInfo();
+    this.validation();
   }
 
   onInputChange = ({ target }) => {
@@ -28,7 +33,7 @@ class ProfileEdit extends Component {
   validation = () => {
     const { description, email, image, name } = this.state;
     const isFilled = description && email && image && name;
-    const isValidEmail = /@test\.com/.test(email);
+    const isValidEmail = /@(.*)\.com/.test(email);
     if (isFilled && isValidEmail) this.setState({ isSaveButtonDisabled: false });
   }
 
