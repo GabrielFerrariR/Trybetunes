@@ -19,7 +19,7 @@ class Search extends Component {
   onInputChange = ({ target: { name, value } }) => {
     this.setState({
       [name]: value,
-    }, () => this.validateName());
+    }, this.validateName);
   }
 
   onBtnClick = async () => {
