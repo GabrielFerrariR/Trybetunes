@@ -34,9 +34,8 @@ class Album extends Component {
     const favorite = await getFavoriteSongs();
     this.setState({
       favoriteSongs: favorite,
-    }, this.setState({
       loading: false,
-    }));
+    });
   }
 
   onFavorite = async (music) => {
