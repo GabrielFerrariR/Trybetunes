@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
 import logo from '../Trybetunes.png';
+import userIcon from '../default.svg';
 
 class Header extends Component {
   constructor() {
@@ -32,7 +33,8 @@ class Header extends Component {
         <div className="header-title">
           <img src={ logo } alt="Trybe-tunes" />
           { loading ? <Loading /> : (
-            <div data-testid="header-user-name">
+            <div data-testid="header-user-name" className="user-badge">
+              <img src={ userIcon } alt="user-icon" />
               { userInfo.name }
               {' '}
             </div>

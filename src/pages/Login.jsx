@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
+import './Styles/Login.css';
+import logo from '../logoPositiva.png';
 
 class Login extends Component {
   constructor() {
@@ -40,9 +42,10 @@ class Login extends Component {
   render() {
     const { userName, isSubmitButtonDisabled, loading, validUser } = this.state;
     return (
-      <div data-testid="page-login">
+      <div data-testid="page-login" className="page-login">
+        <img src={ logo } alt="logo" />
         { loading ? <Loading /> : (
-          <>
+          <section className="input-container">
             <input
               type="text"
               name="userName"
@@ -58,7 +61,7 @@ class Login extends Component {
             >
               Entrar
             </button>
-          </>) }
+          </section>) }
         { validUser && <Redirect to="/search" />}
       </div>
     );
