@@ -26,7 +26,7 @@ class Search extends Component {
   onBtnClick = async () => {
     const { searchInput } = this.state;
     this.setState({
-      btnClicked: false,
+      btnClicked: true,
       loading: true,
       artistName: '',
     });
@@ -79,7 +79,7 @@ class Search extends Component {
           { btnClicked && (
             <SearchResult
               loading={ loading }
-              artistName={ artistName }
+              artName={ artistName }
               artistAlbuns={ artistAlbuns }
             />) }
         </div>

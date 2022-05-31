@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
-import Loading from './Loading';
 import logo from '../Trybetunes.png';
 import userIcon from '../default.svg';
 
@@ -34,10 +33,10 @@ class Header extends Component {
           <img src={ logo } alt="Trybe-tunes" />
           <div data-testid="header-user-name" className="user-badge">
             <img src={ userIcon } alt="user-icon" />
-            { loading ? <Loading /> : (
-              <p>
+            { loading ? <div>Carregando</div> : (
+              <div>
                 { userInfo.name }
-              </p>
+              </div>
             )}
           </div>
         </div>

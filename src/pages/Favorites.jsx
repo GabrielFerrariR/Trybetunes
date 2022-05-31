@@ -37,7 +37,7 @@ class Favorites extends Component {
     const { loading, favoriteSongs, isFavorite } = this.state;
     return (
       <div data-testid="page-favorites">
-        <Header />
+        <Header currentPage="currentPage" />
         {loading ? <Loading /> : favoriteSongs.map((music) => (
           <MusicCard
             key={ music.trackId }

@@ -5,26 +5,36 @@ import Loading from './Loading';
 
 class SearchResult extends Component {
   render() {
-    const { loading, artistName, artistAlbuns } = this.props;
+    const { loading, artName, artistAlbuns } = this.props;
     return (
       <>
         { loading && <Loading /> }
-        { artistName ? (
+        { artName ? (
           <>
-            <p>
-              Resultado de álbuns de:
+            <p className="result-name">
+              Resultado de álbuns de
               {' '}
-              { artistName }
+              { artName }
+              {':'}
             </p>
-            {artistAlbuns.map(({ collectionId, collectionName }) => (
-              <Link
-                key={ collectionId }
-                data-testid={ `link-to-album-${collectionId}` }
-                to={ `/album/${collectionId}` }
-              >
-                { collectionName }
-              </Link>
-            ))}
+            <section className="search-card-container">
+              {artistAlbuns
+                .map(({ collectionId, collectionName, artworkUrl100, artistName }) => (
+                  <Link
+                    key={ collectionId }
+                    data-testid={ `link-to-album-${collectionId}` }
+                    to={ `/album/${collectionId}` }
+                  >
+                    <div className="album-card">
+                      <div className="bliu">
+                        <img src={ artworkUrl100 } alt={ collectionName } />
+                      </div>
+                      <h2>{ artistName }</h2>
+                      <p>{ collectionName }</p>
+                    </div>
+                  </Link>
+                ))}
+            </section>
           </>
         ) : <p>Nenhum álbum foi encontrado</p> }
       </>
