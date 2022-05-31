@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from '../components/Header';
 import SearchResult from '../components/SearchResult';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import searchIcon from '../search_24px.svg';
 
 class Search extends Component {
   constructor() {
@@ -25,20 +26,20 @@ class Search extends Component {
   onBtnClick = async () => {
     const { searchInput } = this.state;
     this.setState({
+      btnClicked: false,
       loading: true,
-      btnClicked: true,
       artistName: '',
     });
     const artistObj = await searchAlbumsAPI(searchInput);
     if (artistObj.length > 0) {
       this.setState({
-        loading: false,
         artistAlbuns: artistObj,
         artistName: searchInput,
         searchInput: '',
       });
     }
-    this.setState({ loading: false });
+    this.setState({ loading: false,
+      btnClicked: true });
   }
 
   validateName() {
@@ -64,6 +65,7 @@ class Search extends Component {
             value={ searchInput }
             onChange={ this.onInputChange }
           />
+          <img src={ searchIcon } alt="search-icon" />
           <button
             type="button"
             data-testid="search-artist-button"

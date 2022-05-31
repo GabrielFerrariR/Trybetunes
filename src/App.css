@@ -72,7 +72,9 @@ header {
   display: flex;
   height: 45px;
   justify-content: center;
-  margin-top: 5.5em;
+  margin: 5.5em auto 0;
+  max-width: 680px;
+  position: relative;
 }
 
 .search-bar input {
@@ -80,12 +82,21 @@ header {
   border: 1px solid #3d495c;
   border-radius: 6px;
   box-sizing: border-box;
+  gap: 10px;
   margin-right: 1em;
+  padding: 12px 16px;
   width: 519px;
+}
+
+.search-bar img {
+  left: 490px;
+  position: absolute;
+  top: 10px;
 }
 
 .search-bar button {
   background: #003be5;
   border-radius: 2px;
+  color: white;
   width: 134px;
 }

@@ -32,13 +32,14 @@ class Header extends Component {
       <header data-testid="header-component">
         <div className="header-title">
           <img src={ logo } alt="Trybe-tunes" />
-          { loading ? <Loading /> : (
-            <div data-testid="header-user-name" className="user-badge">
-              <img src={ userIcon } alt="user-icon" />
-              { userInfo.name }
-              {' '}
-            </div>
-          )}
+          <div data-testid="header-user-name" className="user-badge">
+            <img src={ userIcon } alt="user-icon" />
+            { loading ? <Loading /> : (
+              <p>
+                { userInfo.name }
+              </p>
+            )}
+          </div>
         </div>
         <nav className="header-nav">
           <Link
