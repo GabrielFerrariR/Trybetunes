@@ -9,9 +9,11 @@ class MusicCard extends Component {
   }
 
   render() {
-    const { trackName, trackId, previewUrl, onChange, isFavorited } = this.props;
+    const { trackName, trackId, previewUrl,
+      onChange, isFavorited, musicImg } = this.props;
     return (
-      <div>
+      <div className="music-card">
+        <img src={ musicImg } alt="" />
         <p>{trackName}</p>
         <audio data-testid="audio-component" src={ previewUrl } controls>
           <track kind="captions" />

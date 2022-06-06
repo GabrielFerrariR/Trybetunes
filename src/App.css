@@ -34,6 +34,7 @@ a {
   display: flex;
   height: 78px;
   justify-content: space-between;
+  margin-top: 3px;
   width: 100%;
 }
 
@@ -70,7 +71,7 @@ a {
   background-color: #f0f2f5;
   color: #2FC18C;
   display: flex;
-  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
   font-family: 'Epilogue' , sans-serif;
   font-size: 28px;
   font-style: normal;
@@ -182,7 +183,7 @@ a {
   text-decoration: none;
 }
 
-.result-name {
+.result-name, .fav-musics {
   color: #001813;
   display: block;
   font-family: Epilogue , sans-serif;
@@ -191,4 +192,37 @@ a {
   font-weight: 300;
   line-height: 25px;
   margin: 112px 0 40px 112px;
+}
+
+.music-card {
+  display: flex;
+  margin: auto;
+  padding: 26px 0 24px;
+  position: relative;
+  width: 1079px;
+}
+
+.music-card:after {
+  border: 1px solid #E1E5EB;
+  content: '';
+  height: 0;
+  position: absolute;
+  top: 0;
+  width: 1079px;
+}
+
+.music-card img {
+  border-radius: 100%;
+  height: 61px;
+  margin-left: 102px;
+  margin-right: 68px;
+  width: 61px;
+}
+
+.music-card p {
+  margin-right: 17px;
+}
+
+.music-card audio {
+  margin-right: 38px;
 }

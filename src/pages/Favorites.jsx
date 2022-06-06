@@ -38,6 +38,7 @@ class Favorites extends Component {
     return (
       <div data-testid="page-favorites">
         <Header currentPage="currentPage" />
+        <p className="fav-musics">Músicas favoritas:</p>
         {loading ? <Loading /> : favoriteSongs.map((music) => (
           <MusicCard
             key={ music.trackId }
@@ -45,6 +46,7 @@ class Favorites extends Component {
             previewUrl={ music.previewUrl }
             trackId={ music.trackId }
             music={ music }
+            musicImg={ music.artworkUrl100 }
             isFavorited={ isFavorite }
             onChange={ () => this.favoriteRemove(music) }
           />))}
