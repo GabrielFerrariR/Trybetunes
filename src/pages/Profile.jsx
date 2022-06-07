@@ -33,7 +33,7 @@ class Profile extends Component {
         <Header />
         { loading && <Loading /> }
         { !loading && (
-          <>
+          <section className="profile-container">
             <img src={ image } alt="Profile" data-testid="profile-image" />
             <Link to="/profile/edit">Editar perfil</Link>
             <h2>Nome</h2>
@@ -42,7 +42,7 @@ class Profile extends Component {
             <p>{email}</p>
             <h2>Descrição</h2>
             <p>{description}</p>
-          </>) }
+          </section>) }
       </div>
     );
   }
