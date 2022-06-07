@@ -195,6 +195,7 @@ a {
 }
 
 .music-card {
+  align-items: center;
   display: flex;
   margin: auto;
   padding: 26px 0 24px;
@@ -211,7 +212,7 @@ a {
   width: 1079px;
 }
 
-.music-card img {
+.disk-icon {
   border-radius: 100%;
   height: 61px;
   margin-left: 102px;
@@ -219,10 +220,24 @@ a {
   width: 61px;
 }
 
+.fav-icon {
+  height: 25px;
+  width: 25px;
+}
+
 .music-card p {
+  font-family: Epilogue , sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
   margin-right: 17px;
 }
 
 .music-card audio {
   margin-right: 38px;
+}
+
+.page-album {
+  display: flex;
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
-import MusicCard from '../components/MusicCard';
+import AlbumMusicCard from '../components/AlbumMusicCard';
 import { getFavoriteSongs, addSong, removeSong } from '../services/favoriteSongsAPI';
 import Loading from '../components/Loading';
 
@@ -26,6 +26,7 @@ class Album extends Component {
       musics: album.slice(1),
       artistName: album[0].artistName,
       albumName: album[0].collectionName,
+      albumThumb: album[0].artworkUrl100,
     });
     this.updateFavorites();
   }
@@ -50,22 +51,30 @@ class Album extends Component {
   }
 
   render() {
-    const { musics, artistName, albumName, favoriteSongs, loading } = this.state;
+    const { musics, artistName, albumName,
+      favoriteSongs, loading, albumThumb } = this.state;
     return (
       <div data-testid="page-album">
         <Header />
-        <p data-testid="artist-name">{ artistName }</p>
-        <p data-testid="album-name">{ albumName }</p>
-        {loading ? <Loading /> : musics.map((music) => (
-          <MusicCard
-            key={ music.trackId }
-            trackName={ music.trackName }
-            previewUrl={ music.previewUrl }
-            trackId={ music.trackId }
-            music={ music }
-            isFavorited={ favoriteSongs.some((fav) => fav.trackId === music.trackId) }
-            onChange={ () => this.onFavorite(music) }
-          />))}
+        <div className="page-album">
+          <section className="album-info">
+            <img src={ albumThumb } alt="Album thumbnail" />
+            <h1 data-testid="album-name">{ albumName }</h1>
+            <p data-testid="artist-name">{ artistName }</p>
+          </section>
+          <section>
+            {loading ? <Loading /> : musics.map((music) => (
+              <AlbumMusicCard
+                key={ music.trackId }
+                trackName={ music.trackName }
+                previewUrl={ music.previewUrl }
+                trackId={ music.trackId }
+                music={ music }
+                isFavorited={ favoriteSongs.some((fav) => fav.trackId === music.trackId) }
+                onChange={ () => this.onFavorite(music) }
+              />))}
+          </section>
+        </div>
       </div>
     );
   }

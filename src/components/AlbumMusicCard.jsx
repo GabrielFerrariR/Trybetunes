@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import heart from '../bi_heart.svg';
 import heartFill from '../bi_heart-fill.svg';
 
-class MusicCard extends Component {
+class AlbumMusicCard extends Component {
   constructor() {
     super();
     this.state = {
@@ -12,10 +12,9 @@ class MusicCard extends Component {
 
   render() {
     const { trackName, trackId, previewUrl,
-      onChange, isFavorited, musicImg } = this.props;
+      onChange, isFavorited } = this.props;
     return (
       <div className="music-card">
-        <img className="disk-icon" src={ musicImg } alt="" />
         <p>{trackName}</p>
         <audio data-testid="audio-component" src={ previewUrl } controls>
           <track kind="captions" />
@@ -44,8 +43,8 @@ class MusicCard extends Component {
   }
 }
 
-export default MusicCard;
-MusicCard.propTypes = {
+export default AlbumMusicCard;
+AlbumMusicCard.propTypes = {
   trackName: PropTypes.string,
   previewUrl: PropTypes.string,
 }.isRequired;
