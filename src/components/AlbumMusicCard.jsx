@@ -14,7 +14,7 @@ class AlbumMusicCard extends Component {
     const { trackName, trackId, previewUrl,
       onChange, isFavorited } = this.props;
     return (
-      <div className="music-card">
+      <div className="album-music-card">
         <p>{trackName}</p>
         <audio data-testid="audio-component" src={ previewUrl } controls>
           <track kind="captions" />

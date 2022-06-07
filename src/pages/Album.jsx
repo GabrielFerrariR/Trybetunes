@@ -62,7 +62,7 @@ class Album extends Component {
             <h1 data-testid="album-name">{ albumName }</h1>
             <p data-testid="artist-name">{ artistName }</p>
           </section>
-          <section>
+          <section style={ { marginTop: '139px' } }>
             {loading ? <Loading /> : musics.map((music) => (
               <AlbumMusicCard
                 key={ music.trackId }

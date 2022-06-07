@@ -194,7 +194,7 @@ a {
   margin: 112px 0 40px 112px;
 }
 
-.music-card {
+.music-card, .album-music-card {
   align-items: center;
   display: flex;
   margin: auto;
@@ -203,13 +203,22 @@ a {
   width: 1079px;
 }
 
-.music-card:after {
-  border: 1px solid #E1E5EB;
+.album-music-card {
+  justify-content: space-evenly;
+  width: 798px;
+}
+
+.music-card:after, .album-music-card:after {
+  border: 1px solid #e1e5eb;
   content: '';
   height: 0;
   position: absolute;
   top: 0;
   width: 1079px;
+}
+
+.album-music-card:after {
+  width: 798px;
 }
 
 .disk-icon {
@@ -225,7 +234,7 @@ a {
   width: 25px;
 }
 
-.music-card p {
+.music-card p, .album-music-card p {
   font-family: Epilogue , sans-serif;
   font-size: 22px;
   font-style: normal;
@@ -234,10 +243,38 @@ a {
   margin-right: 17px;
 }
 
-.music-card audio {
+.music-card audio .album-music-card audio{
   margin-right: 38px;
 }
 
 .page-album {
   display: flex;
+}
+
+.album-info {
+  margin: 161px 79px 0 179px;
+  width: 300px;
+}
+
+.album-info img {
+  height: 290px;
+  width: 290px;
+}
+
+.album-info h1 {
+  color: #023031;
+  font-family: Epilogue , sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 37px;
+}
+
+.album-info p {
+  color: #023031;
+  font-family: Epilogue , sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 25px;
 }
