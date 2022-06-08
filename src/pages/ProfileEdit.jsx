@@ -67,14 +67,21 @@ class ProfileEdit extends Component {
         <Header />
         {loading && <Loading />}
         {!loading && (
-          <form>
-            <input
-              type="text"
-              data-testid="edit-input-image"
-              name="image"
-              value={ image }
-              onChange={ this.onInputChange }
-            />
+          <form className="profile-form">
+            <div style={ { display: 'flex', alignItems: 'flex-end' } }>
+              <img src={ image } alt="Profile" />
+              <input
+                type="text"
+                data-testid="edit-input-image"
+                name="image"
+                className="pic-input"
+                placeholder="Insira um link"
+                value={ image }
+                onChange={ this.onInputChange }
+              />
+            </div>
+            <h1>Nome</h1>
+            <p>Fique à vontade para usar seu nome social</p>
             <input
               type="text"
               data-testid="edit-input-name"
@@ -82,6 +89,8 @@ class ProfileEdit extends Component {
               value={ name }
               onChange={ this.onInputChange }
             />
+            <h1>E-mail</h1>
+            <p>Escolha um e-mail que consulte frequentemente</p>
             <input
               type="email"
               data-testid="edit-input-email"
@@ -89,10 +98,12 @@ class ProfileEdit extends Component {
               value={ email }
               onChange={ this.onInputChange }
             />
-            <input
+            <h1>Descrição</h1>
+            <textarea
               type="text"
               name="description"
               data-testid="edit-input-description"
+              placeholder="Sobre mim"
               value={ description }
               onChange={ this.onInputChange }
             />
