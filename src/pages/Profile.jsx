@@ -34,8 +34,14 @@ class Profile extends Component {
         { loading && <Loading /> }
         { !loading && (
           <section className="profile-container">
-            <img src={ image } alt="Profile" data-testid="profile-image" />
-            <Link to="/profile/edit">Editar perfil</Link>
+            <div
+              style={ { display: 'flex',
+                alignItems: 'flex-end',
+                justifyContent: 'space-between' } }
+            >
+              <img src={ image } alt="Profile" data-testid="profile-image" />
+              <Link to="/profile/edit">Editar perfil</Link>
+            </div>
             <h2>Nome</h2>
             <p>{name}</p>
             <h2>Email</h2>

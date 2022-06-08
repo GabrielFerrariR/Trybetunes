@@ -197,6 +197,7 @@ a {
 .music-card, .album-music-card {
   align-items: center;
   display: flex;
+  justify-content: space-evenly;
   margin: auto;
   padding: 26px 0 24px;
   position: relative;
@@ -204,7 +205,6 @@ a {
 }
 
 .album-music-card {
-  justify-content: space-evenly;
   width: 798px;
 }
 
@@ -283,11 +283,12 @@ a {
   display: flex;
   flex-direction: column;
   margin: 104px auto;
-  width: 310px;
+  width: 288px;
 }
 
 .profile-container a {
   align-items: center;
+  align-self: flex-end;
   border: 1px solid #003be5;
   border-radius: 6px;
   color: #003be5;
@@ -312,16 +313,16 @@ a {
   width: 288px;
 }
 
-.profile-form h1, .profile-form p, .profile-form button {
+.profile-form h1, .profile-form p, .profile-form button, .profile-container h2 {
   color: #3d495c;
   font-family: Verdana , sans-serif;
   font-size: 16px;
-  font-style: normal;
+  font-style: bold;
   font-weight: 700;
   line-height: 150%;
 }
 
-.profile-form h1 {
+.profile-form h1, .profile-container h2 {
   margin: 24px 0 0;
 }
 
@@ -330,6 +331,14 @@ a {
   font-style: italic;
   font-weight: 400;
   margin: 0 0 8px;
+}
+
+.profile-container p {
+  color: #3d495c;
+  font-family: Verdana , sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 4px 0 30px;
 }
 
 .profile-form input, .profile-form textarea {
@@ -341,7 +350,7 @@ a {
   width: 288px;
 }
 
-.profile-form img {
+.profile-form img, .profile-container img {
   border-radius: 100%;
   height: 80px;
   margin-right: 17px;
