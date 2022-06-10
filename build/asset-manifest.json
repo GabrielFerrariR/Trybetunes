@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Trybetunes/static/css/main.914fbb2f.chunk.css",
+    "main.js": "/Trybetunes/static/js/main.7d062136.chunk.js",
+    "main.js.map": "/Trybetunes/static/js/main.7d062136.chunk.js.map",
+    "runtime-main.js": "/Trybetunes/static/js/runtime-main.c606cdc0.js",
+    "runtime-main.js.map": "/Trybetunes/static/js/runtime-main.c606cdc0.js.map",
+    "static/js/2.da6192a4.chunk.js": "/Trybetunes/static/js/2.da6192a4.chunk.js",
+    "static/js/2.da6192a4.chunk.js.map": "/Trybetunes/static/js/2.da6192a4.chunk.js.map",
+    "index.html": "/Trybetunes/index.html",
+    "static/css/main.914fbb2f.chunk.css.map": "/Trybetunes/static/css/main.914fbb2f.chunk.css.map",
+    "static/js/2.da6192a4.chunk.js.LICENSE.txt": "/Trybetunes/static/js/2.da6192a4.chunk.js.LICENSE.txt",
+    "static/media/bi_heart-fill.873be121.svg": "/Trybetunes/static/media/bi_heart-fill.873be121.svg",
+    "static/media/bi_heart.6aaff53e.svg": "/Trybetunes/static/media/bi_heart.6aaff53e.svg",
+    "static/media/default.fe076b88.svg": "/Trybetunes/static/media/default.fe076b88.svg",
+    "static/media/search_24px.eaf920e5.svg": "/Trybetunes/static/media/search_24px.eaf920e5.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c606cdc0.js",
+    "static/js/2.da6192a4.chunk.js",
+    "static/css/main.914fbb2f.chunk.css",
+    "static/js/main.7d062136.chunk.js"
+  ]
+}
