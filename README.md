@@ -19,7 +19,7 @@
 
 # Sobre
 
-Este projeto foi realizado durante o módulo de front-end da [Trybe]().
+Este projeto foi realizado durante o módulo de front-end da [Trybe](https://www.betrybe.com/). Veja esta aplicação no [seu navegador](https://trybetunesgfr.netlify.app/).
 
 O TrybeTunes é uma aplicação capaz de reproduzir músicas das mais variadas bandas e artistas, criar uma lista de músicas favoritas e editar o perfil da pessoa usuária logada. Essa aplicação é capaz de:
 
